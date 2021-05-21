@@ -31,48 +31,68 @@ namespace unitConversions
 
             if (choice == 1)
             {
-                InchToCm(number);
+                double cm = InchToCm(number);
+                outputLabel.Text = $"{number} inches is {cm.ToString("0.00")} cms";
             }
             else if (choice == 2)
             {
-                FeetToCm(number);
+                double result = FeetToCm(number);
+                outputLabel.Text = $"{number} feet is {result.ToString("0.00")} cms";
             }
             else if (choice == 3)
             {
-                YardsToMetres(number);
+                double metres = YardsToMetres(number);
+                outputLabel.Text = $"{number} yards is {metres.ToString("0.00")} metres";
             }
             else if (choice == 4)
             {
-                MilesToKm(number);
+                double km = MilesToKm(number);
+                outputLabel.Text = $"{number} miles is {km.ToString("0.00")} km";
             }
             else
             {
                 outputLabel.Text = "Please use 1-4 to select their corresponding conversions";
             }
         }
-        public void InchToCm(double inches)
+        /// <summary>
+        /// Converts Inches to Centimetres
+        /// </summary>
+        /// <param name="inches"> The double value that is being converted to centimetres</param> 
+        /// <returns> double returned of operations inches * 2.54</returns> 
+        public double InchToCm(double inches)
         {
             double cm = inches * 2.54;
-
-            outputLabel.Text = $"{inches} inches is {cm.ToString("#.##")} cms";
-        }             //method to convert inches to centimetres
-        public void FeetToCm(double feet)
+            return cm;
+        }
+        /// <summary>
+        /// Converts Feet to Centimetres
+        /// </summary>
+        /// <param name="feet"> The double value that is being converted to centimetres</param>
+        /// <returns> double returned of operations feet * 30.48</returns>
+        public double FeetToCm(double feet)
         {
             double cm = feet * 30.48;
-
-            outputLabel.Text = $"{feet} feet is {cm.ToString("#.##")} cms";
-        }               //method to convert Feet to centimetres
-        public void YardsToMetres(double yards)
+            return cm;
+        }
+        /// <summary>
+        /// Converts Yards to Metres
+        /// </summary>
+        /// <param name="yards"> The double value that is being converted to metres</param>
+        /// <returns> double returned of operations yards * 0.91</returns>
+        public double YardsToMetres(double yards)
         {
             double metres = yards * 0.91;
-
-            outputLabel.Text = $"{yards} yards is {metres.ToString("#.##")} metres";
-        }         //method to convert yards to metres
-        public void MilesToKm(double miles)
+            return metres;
+        }
+        /// <summary>
+        /// Converts Miles to Kilometres
+        /// </summary>
+        /// <param name="miles"> The double value that is being converted to kilometres</param>
+        /// <returns> double returned of operations miles * 1.609</returns>
+        public double MilesToKm(double miles)
         {
             double km = miles * 1.609;
-
-            outputLabel.Text = $"{miles} miles is {km.ToString("#.##")} km";
-        }             //method to convert miles to kilomtres
+            return km;
+        }
     }
 }
